@@ -14,6 +14,7 @@ import Home from "./pages/Home.tsx";
 import ProductDetails from "./pages/ProductDetails.tsx";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools/production";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { StoreProvider } from "./Store.tsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -28,11 +29,13 @@ const queryClient = new QueryClient();
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
+    <StoreProvider>
     <HelmetProvider>
       <QueryClientProvider client={ queryClient}>
         <RouterProvider router={router} />
         <ReactQueryDevtools initialIsOpen={false} />
       </QueryClientProvider>
     </HelmetProvider>
+    </StoreProvider>
   </React.StrictMode>,
 );
