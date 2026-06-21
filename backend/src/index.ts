@@ -4,6 +4,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import { productRouter } from './router/productRouter';
+import { seedRouter } from './router/seedRouter';
 
 dotenv.config();
 
@@ -34,6 +35,7 @@ app.use(
 
 
 app.use("/api/products", productRouter);
+app.use("/api/seed", seedRouter);
 
 
 
