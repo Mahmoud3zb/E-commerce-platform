@@ -6,7 +6,9 @@
     "outDir": "./build",
     "strict": true,
     "esModuleInterop": true,
-    "ignoreDeprecations": "6.0"
+    "ignoreDeprecations": "6.0",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true
   },
   "include": ["src/**/*"]
 }
